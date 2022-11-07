@@ -1,0 +1,35 @@
+{
+	"ts-node": {
+		// Do not forget to `npm i -D tsconfig-paths`
+		"require": ["tsconfig-paths/register"]
+	},
+	"compilerOptions": {
+		"moduleResolution": "NodeNext",
+		"target": "es2016",
+		"module": "CommonJS",
+		"lib": ["ES2022"],
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+
+		"baseUrl": ".",
+		"noImplicitAny": false,
+		"outDir": "dist",
+		"paths": {
+			"@src": ["./src"],
+			"@src/*": ["./src/*"],
+			"@domain": ["./src/domain"],
+			"@domain/*": ["./src/domain/*"],
+			"@adapters": ["./src/adapters"],
+			"@adapters/*": ["./src/adapters/*"],
+			"@ports": ["./src/ports"],
+			"@ports/*": ["./src/ports/*"],
+			"@utils": ["./src/utils"],
+			"@utils/*": ["./src/utils/*"]
+		}
+	},
+	"include": ["./src"]
+}

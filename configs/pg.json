@@ -1,0 +1,7 @@
+{
+	"address": "20.0.0.10",
+	"port": 5432,
+	"user": "mamad",
+	"password": "password",
+	"database": "mamad"
+}
