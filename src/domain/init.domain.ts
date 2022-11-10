@@ -30,7 +30,7 @@ export default class InitialService implements IInitialService {
 				raw_query VARCHAR NOT NULL,
 
 				table_name VARCHAR NOT NULL,
-				conditional_params VARCHAR[] NOT NULL,
+				conditional_colums VARCHAR[] NOT NULL,
 				selected_fields VARCHAR[] NOT NULL,
 				limitation INT DEFAULT NULL,
 				skipped INT DEFAULT NULL,

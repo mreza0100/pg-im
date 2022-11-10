@@ -1,1 +1,2 @@
-export * from "./cmd.init";
+export * from "./init.cmd";
+export * from "./observe.cmd";

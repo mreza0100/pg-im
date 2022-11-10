@@ -1,16 +1,31 @@
 import type { IPGConnectionConfigs } from "@src/types/connection.type";
 import { Client } from "pg";
+import File from "./file.utils";
 
 export default class Connection {
-	constructor() {}
+	public static async getConnectionWithConfigFile(path: string): Promise<Client> {
+		const pgConfigs = await File.readOSFileJson<IPGConnectionConfigs>(path);
 
-	public static async getConnection(config: IPGConnectionConfigs): Promise<Client> {
 		const pgClient = new Client({
-			user: config.user,
-			password: config.password,
-			database: config.database,
-			host: config.address,
-			port: config.port,
+			user: pgConfigs.user,
+			password: pgConfigs.password,
+			database: pgConfigs.database,
+			host: pgConfigs.address,
+			port: pgConfigs.port,
+			application_name: "im-pg",
+		});
+		await pgClient.connect();
+
+		return pgClient;
+	}
+
+	public static async getConnection(pgConfig: IPGConnectionConfigs): Promise<Client> {
+		const pgClient = new Client({
+			user: pgConfig.user,
+			password: pgConfig.password,
+			database: pgConfig.database,
+			host: pgConfig.address,
+			port: pgConfig.port,
 		});
 		await pgClient.connect();
 
