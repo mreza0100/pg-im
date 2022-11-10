@@ -12,7 +12,7 @@ export default class Connection {
 			database: pgConfigs.database,
 			host: pgConfigs.address,
 			port: pgConfigs.port,
-			application_name: "im-pg",
+			application_name: "pg-im",
 		});
 		await pgClient.connect();
 

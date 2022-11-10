@@ -18,7 +18,7 @@ export class CSVParser implements ICSVParser {
 	}
 
 	private isTheRightLog(log: ICSVLogObj): boolean {
-		if (log.client === "im-pg" || log.client === "psql") {
+		if (log.client === "pg-im" || log.client === "psql") {
 			return false;
 		}
 		if (log.logResult !== "LOG") {
