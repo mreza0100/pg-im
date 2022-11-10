@@ -21,7 +21,7 @@ It's a cli tool now, but it can be a library, or a server that your client can c
 ### Commands:
 
 - `pg-im init ./path/to/db.json` will configure your Postgres database.
-- `pg-im observe ./path/to/db.json` will watch the Postgres, collect logs and remove your queries.
+- `pg-im observe ./path/to/db.json` will watch the Postgres, collect logs, create/remove index.
 
 #### note:
 
